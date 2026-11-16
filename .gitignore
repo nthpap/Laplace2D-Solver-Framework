@@ -1,0 +1,9 @@
+# MATLAB temporary files
+*.asv
+*.m~
+*.autosave
+
+# MATLAB generated files
+slprj/
+codegen/
+*.mex*
