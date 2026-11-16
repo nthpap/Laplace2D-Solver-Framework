@@ -14,14 +14,14 @@ Rather than focusing on a single numerical algorithm, the framework is designed 
 
 The primary problem considered is the two-dimensional Laplace equation:
 
-\[
+$$
 \nabla^2 u =
 \frac{\partial^2 u}{\partial x^2}
 +
 \frac{\partial^2 u}{\partial y^2}
 =0,
-\qquad (x,y)\in\Omega,
-\]
+\qquad (x,y)\in\Omega.
+$$
 
 where \(\Omega\) is a rectangular computational domain.
 
