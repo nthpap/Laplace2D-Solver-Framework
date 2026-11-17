@@ -22,10 +22,41 @@
 % CONTACT: nthpapadopoulos@gmail.com
 %% ========================================================================
 
-function u = solve_system(A, b)
 
-%% Solve linear system
+function u = solve_system(A, b, method)
 
-u = A \ b;
+% Select and execute the requested solver.
+
+switch lower(method)
+
+    case 'backslash'
+
+        u = solve_backslash(A, b);
+
+    case 'gaussian'
+
+        u = solve_gaussian(A, b);
+
+    case 'lu'
+
+        u = solve_lu(A, b);
+
+    case 'jacobi'
+
+        u = solve_jacobi(A, b);
+
+    case 'gauss-seidel'
+
+        u = solve_gauss_seidel(A, b);
+
+    case 'sor'
+
+        u = solve_sor(A, b);
+
+    otherwise
+
+        error('Unknown solution method: %s', method);
+
+end
 
 end

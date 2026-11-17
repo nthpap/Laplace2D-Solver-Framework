@@ -23,7 +23,7 @@
 %% ========================================================================
 
 function [h_values, E_values] = convergence_study( ...
-    problem, M_values, N_values, exact_func)
+    problem, M_values, N_values, exact_func, method)
 
 %% Check input dimensions
 
@@ -67,7 +67,7 @@ for q = 1:length(M_values)
 
     %% Solve linear system
 
-    u_q = solve_system(A_q, b_q);
+    u_q = solve_system(A_q, b_q, method);
 
     %% Reconstruct numerical solution
 

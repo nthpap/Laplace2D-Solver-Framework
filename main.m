@@ -84,7 +84,13 @@ fprintf('Central coefficient: %.2f\n', full(A(1,1)));
 
 %% Solve linear system
 
-u = solve_system(A, b);
+%method = 'backslash';
+
+%method = 'gaussian';
+
+method = 'lu';
+
+u = solve_system(A, b, method);
 
 %% Display solution information
 
@@ -136,7 +142,7 @@ M_values = [10 20 50 80 100];
 N_values = [10 20 50 80 100];
 
 [h_values, E_values] = convergence_study( ...
-    problem, M_values, N_values, exact_func);
+    problem, M_values, N_values, exact_func, method);
 
 %% Display convergence results
 
