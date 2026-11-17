@@ -23,7 +23,9 @@
 %% ========================================================================
 
 
-function u = solve_system(A, b, method)
+function [u, info] = solve_system(A, b, method)
+
+info = struct();
 
 % Select and execute the requested solver.
 
@@ -43,15 +45,15 @@ switch lower(method)
 
     case 'jacobi'
 
-        u = solve_jacobi(A, b);
+        [u, info.iterations] = solve_jacobi(A, b);
 
     case 'gauss-seidel'
 
-        u = solve_gauss_seidel(A, b);
+        [u, info.iterations] = solve_gauss_seidel(A, b);
 
     case 'sor'
 
-        u = solve_sor(A, b);
+        [u, info.iterations] = solve_sor(A,b);
 
     otherwise
 

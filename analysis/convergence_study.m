@@ -67,7 +67,14 @@ for q = 1:length(M_values)
 
     %% Solve linear system
 
-    u_q = solve_system(A_q, b_q, method);
+    %u_q = solve_system(A_q, b_q, method);
+
+    fprintf('Solving grid M = %d, N = %d\n', ...
+        M_values(q), N_values(q));
+
+    [u_q, info_q] = solve_system(A_q, b_q, method);
+
+    fprintf('Completed. Iterations: %d\n', info_q.iterations);
 
     %% Reconstruct numerical solution
 

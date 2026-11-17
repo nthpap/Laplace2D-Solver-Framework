@@ -88,7 +88,13 @@ fprintf('Central coefficient: %.2f\n', full(A(1,1)));
 
 %method = 'gaussian';
 
-method = 'lu';
+%method = 'lu';
+
+%method = 'jacobi';
+
+%method = 'gauss-seidel';
+
+method = 'sor';
 
 u = solve_system(A, b, method);
 
