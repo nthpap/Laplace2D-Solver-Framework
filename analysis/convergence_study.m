@@ -74,7 +74,11 @@ for q = 1:length(M_values)
 
     [u_q, info_q] = solve_system(A_q, b_q, method);
 
-    fprintf('Completed. Iterations: %d\n', info_q.iterations);
+    if isfield(info_q, 'iterations')
+        fprintf('Completed. Iterations: %d\n', info_q.iterations);
+    else
+        fprintf('Completed. Direct method.\n');
+    end
 
     %% Reconstruct numerical solution
 
